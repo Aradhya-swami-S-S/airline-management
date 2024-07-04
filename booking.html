@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air-Book</title>
+    <link rel="stylesheet" href="./booking.css">
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+    <nav style="background-color: rgb(242, 246, 250); border-radius: 1rem; margin-top: 0.3rem;">
+        <div class="nav__logo">Go.air</div>
+        <ul class="nav__links">
+            <li class="link"><a href="./index.html">Home</a></li>
+            <li class="link"><a href="./index.html">About</a></li>
+            <li class="link"><a href="./index.html">Offers</a></li>
+            <li class="link"><a href="./index.html">Seats</a></li>
+            <li class="link"><a href="./index.html">Destinations</a></li>
+        </ul>
+        <button class="btn">Contact</button>
+    </nav>
+    <section class="section__container booking__container" style="margin-top: 6rem;">
+        <div class="booking__nav">
+            <span>Economy Class</span>
+            <span>Business Class</span>
+            <span>First Class</span>
+        </div>
+        <form>
+            <div class="form__group">
+                <span><i class="ri-map-pin-line"></i></span>
+                <div class="input__content">
+                    <div class="input__group">
+                        <input type="text" />
+                        <label>Location</label>
+                    </div>
+                    <p>Where are you goung?</p>
+                </div>
+            </div>
+
+            <div class="form__group">
+                <span><i class="ri-user-3-line"></i></span>
+                <div class="input__content">
+                    <div class="input__group">
+                        <input type="number" />
+                        <label>Travellers</label>
+                    </div>
+                    <p>Add guests</p>
+                </div>
+            </div>
+
+            <div class="form__group">
+                <span><i class="ri-calendar-line"></i></span>
+                <div class="input__content">
+                    <div class="input__group">
+                        <input type="text" />
+                        <label>Departure</label>
+                    </div>
+                    <p>Add date</p>
+                </div>
+            </div>
+
+            <div class="form__group">
+                <span><i class="ri-calendar-line"></i></span>
+                <div class="input__content">
+                    <div class="input__group">
+                        <input type="text" />
+                        <label>Return</label>
+                    </div>
+                    <p>Add date</p>
+                </div>
+            </div>
+
+
+            <button class="btn"><i class="ri-search-line"></i>Search</button>
+        </form>
+    </section>
+</body>
+
+</html>
