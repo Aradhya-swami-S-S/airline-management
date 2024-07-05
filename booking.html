@@ -7,8 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Air-Book</title>
     <link rel="stylesheet" href="./booking.css">
-    <link rel="stylesheet" href="./styles.css">
+    <!-- <link rel="stylesheet" href="./styles.css"> -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <style>
+        .active {
+            background-color: rgb(61, 91, 184);
+            color: black;
+        }
+
+        .inactive {
+            background-color: rgb(242, 246, 250);
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
@@ -25,9 +36,9 @@
     </nav>
     <section class="section__container booking__container" style="margin-top: 6rem;">
         <div class="booking__nav">
-            <span>Economy Class</span>
-            <span>Business Class</span>
-            <span>First Class</span>
+            <span class="booking__option inactive">Economy Class</span>
+            <span class="booking__option inactive">Business Class</span>
+            <span class="booking__option inactive">First Class</span>
         </div>
         <form>
             <div class="form__group">
@@ -37,7 +48,7 @@
                         <input type="text" />
                         <label>Location</label>
                     </div>
-                    <p>Where are you goung?</p>
+                    <p>Where are you going?</p>
                 </div>
             </div>
 
@@ -74,10 +85,24 @@
                 </div>
             </div>
 
-
             <button class="btn"><i class="ri-search-line"></i>Search</button>
         </form>
     </section>
+
+    <script>
+        const options = document.querySelectorAll('.booking__option');
+
+        options.forEach(option => {
+            option.addEventListener('click', () => {
+                options.forEach(opt => {
+                    opt.classList.remove('active');
+                    opt.classList.add('inactive');
+                });
+                option.classList.remove('inactive');
+                option.classList.add('active');
+            });
+        });
+    </script>
 </body>
 
 </html>
