@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.flight-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+.flight-info {
+    display: flex;
+    align-items: center;
+}
+
+.airline-logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.flight-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.airline {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.flight-number {
+    color: #555;
+}
+
+.flight-times {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    margin: 0 20px;
+}
+
+.departure, .arrival, .duration {
+    text-align: center;
+}
+
+.time {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.location {
+    color: #555;
+}
+
+.duration-time {
+    font-size: 16px;
+}
+
+.non-stop {
+    color: #555;
+}
+
+.price-book {
+    text-align: right;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.discount {
+    color: #f00;
+}
+
+.book-button {
+    display: block;
+    padding: 15px 50px;
+    background-color: rgb(61, 91, 184);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.book-button:hover {
+    background-color: rgb(165, 210, 255);
+    color: black;
+}
+
+.flight-details-link {
+    display: block;
+    margin-top: 10px;
+    color: #ff6600;
+    text-decoration: none;
+}
+
+.flight-details-link:hover {
+    text-decoration: underline;
+}

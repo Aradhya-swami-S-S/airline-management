@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Air-Book</title>
     <link rel="stylesheet" href="./booking.css">
-    <!-- <link rel="stylesheet" href="./styles.css"> -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
     <style>
         .active {
@@ -19,6 +18,8 @@
             background-color: rgb(242, 246, 250);
             color: white;
         }
+
+       
     </style>
 </head>
 
@@ -40,12 +41,23 @@
             <span class="booking__option inactive">Business Class</span>
             <span class="booking__option inactive">First Class</span>
         </div>
-        <form>
+        <form id="bookingForm">
+
+            <div class="form__group">
+                <span><i class="ri-calendar-line"></i></span>
+                <div class="input__content">
+                    <div class="input__group">
+                        <input type="text" id="return" required />
+                        <label>Return</label>
+                    </div>
+                    <p>Add date</p>
+                </div>
+            </div>
             <div class="form__group">
                 <span><i class="ri-map-pin-line"></i></span>
                 <div class="input__content">
                     <div class="input__group">
-                        <input type="text" />
+                        <input type="text" id="location" required />
                         <label>Location</label>
                     </div>
                     <p>Where are you going?</p>
@@ -56,7 +68,7 @@
                 <span><i class="ri-user-3-line"></i></span>
                 <div class="input__content">
                     <div class="input__group">
-                        <input type="number" />
+                        <input type="number" id="travellers" required />
                         <label>Travellers</label>
                     </div>
                     <p>Add guests</p>
@@ -67,25 +79,17 @@
                 <span><i class="ri-calendar-line"></i></span>
                 <div class="input__content">
                     <div class="input__group">
-                        <input type="text" />
+                        <input type="date" id="departure" required />
                         <label>Departure</label>
                     </div>
                     <p>Add date</p>
                 </div>
             </div>
 
-            <div class="form__group">
-                <span><i class="ri-calendar-line"></i></span>
-                <div class="input__content">
-                    <div class="input__group">
-                        <input type="text" />
-                        <label>Return</label>
-                    </div>
-                    <p>Add date</p>
-                </div>
-            </div>
-
-            <button class="btn"><i class="ri-search-line"></i>Search</button>
+            <button type="button" class="btn" id="searchBtn">
+                <i class="ri-search-line" style="margin-right: 1rem;"></i>
+                Search
+            </button>
         </form>
     </section>
 
@@ -100,6 +104,29 @@
                 });
                 option.classList.remove('inactive');
                 option.classList.add('active');
+            });
+        });
+
+        document.getElementById('searchBtn').addEventListener('click', () => {
+            const location = document.getElementById('location').value;
+            const travellers = document.getElementById('travellers').value;
+            const departure = document.getElementById('departure').value;
+            const returnDate = document.getElementById('return').value;
+
+            if (location && travellers && departure && returnDate) {
+                window.location.href = './flight_list.html';
+            } else {
+                alert('Please fill all fields before searching.');
+            }
+        });
+
+        document.querySelectorAll('.input__group input').forEach(input => {
+            input.addEventListener('input', (e) => {
+                if (e.target.value.trim() !== "") {
+                    e.target.classList.add('not-empty');
+                } else {
+                    e.target.classList.remove('not-empty');
+                }
             });
         });
     </script>
