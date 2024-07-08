@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Ticket Booking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Book a Ticket</h1>
+    <form id="ticketForm">
+        <input type="text" id="passengerName" placeholder="Passenger Name" required>
+        <input type="text" id="flightNumber" placeholder="Flight Number" required>
+        <input type="text" id="departure" placeholder="Departure" required>
+        <input type="text" id="destination" placeholder="Destination" required>
+        <button type="submit">Book</button>
+    </form>
+    <script>
+        document.getElementById('ticketForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const passengerName = document.getElementById('passengerName').value;
+            const flightNumber = document.getElementById('flightNumber').value;
+            const departure = document.getElementById('departure').value;
+            const destination = document.getElementById('destination').value;
+
+            const response = await fetch('/api/tickets', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ passengerName, flightNumber, departure, destination })
+            });
+
+            const result = await response.json();
+            console.log(result);
+        });
+    </script>
+</body>
+</html>
